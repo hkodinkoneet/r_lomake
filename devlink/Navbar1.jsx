@@ -33,7 +33,7 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
         <_Builtin.NavbarBrand
           className={_utils.cx(_styles, "brand-2")}
           options={{
-            href: "#",
+            href: "https://www.rosenlew.fi/",
           }}
         >
           <_Builtin.Image
@@ -43,6 +43,9 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
             height="auto"
             alt=""
             src="https://cdn.prod.website-files.com/6728c00a3dc736ab0bc51fde/6851315c0e9db06018e980c2_rosenlew2.png"
+            options={{
+            href: "https://www.rosenlew.fi/",
+          }}
           />
         </_Builtin.NavbarBrand>
         <_Builtin.NavbarMenu
@@ -57,7 +60,7 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
             <_Builtin.NavbarLink
               className={_utils.cx(_styles, "uui-navbar07_link")}
               options={{
-                href: "#",
+                href: "https://www.rosenlew.fi/blogikirjoitukset",
               }}
             >
               {"Blogi"}
@@ -100,7 +103,7 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
                     button={false}
                     block="inline"
                     options={{
-                      href: "#",
+                      href: "https://www.rosenlew.fi/kylmalaitteet",
                     }}
                   >
                     <_Builtin.Block
@@ -187,7 +190,7 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
                     button={false}
                     block="inline"
                     options={{
-                      href: "#",
+                      href: "https://www.rosenlew.fi/uunit-ja-liedet",
                     }}
                   >
                     <_Builtin.Block
@@ -230,7 +233,7 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
                     button={false}
                     block="inline"
                     options={{
-                      href: "#",
+                      href: "https://www.rosenlew.fi/pyykinpesu",
                     }}
                   >
                     <_Builtin.Block
@@ -277,7 +280,7 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
                     button={false}
                     block="inline"
                     options={{
-                      href: "#",
+                      href: "https://www.rosenlew.fi/pienlaitteet",
                     }}
                   >
                     <_Builtin.Block
@@ -367,7 +370,7 @@ export function Navbar1({ as: _Component = _Builtin.NavbarWrapper }) {
             <_Builtin.NavbarLink
               className={_utils.cx(_styles, "uui-navbar07_link")}
               options={{
-                href: "#",
+                href: "https://www.rosenlew.fi/huolto",
               }}
             >
               {"Huolto"}
