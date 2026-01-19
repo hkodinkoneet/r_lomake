@@ -1,53 +1,159 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Section, Container, Block, Link } from '../../devlink/_Builtin/Basic';
+import { Section, Container, Block } from '../../devlink/_Builtin/Basic';
+import  { Navbar1 }  from '../../devlink/Navbar1.jsx';
+
 ---
 
 <Layout>
+  <!-- Webflow Navbar -->
+  <Navbar1 client:load />
+
+  <!-- Main Form Section -->
   <Section
     client:load
     tag="section"
     className="margin-bottom-24px"
     style={{
-      minHeight: '100vh',
+      minHeight: '40vh',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      paddingTop: '40px',
+      paddingBottom: '60px'    
     }}
   >
     <Container>
       <Block
         tag="div"
-        className="hero-split"
+        className="form-container"
         style={{
           textAlign: 'center',
           maxWidth: '600px',
-          margin: '0 auto'
+          margin: '0 auto 48px'
         }}
       >
-        <h1 class="margin-bottom-24px">Welcome to Webflow Cloud</h1>
-        <p class="margin-bottom-24px">This is a simple test using Basic components with enhanced styling.</p>
-        <div style={{marginTop: '12px'}}>
-          <Link
-            button={true}
-            options={{
-              href: "https://developers.webflow.com/webflow-cloud/getting-started"
-            }}
-            className="button-primary"
-          >
-            Get Started
-          </Link>
-        </div>
+        <h1 class="margin-bottom-24px">Rekisteröi tuote</h1>
+
+<form 
+  method="POST" 
+  action="/api/register" 
+  style={{display: 'flex', flexDirection: 'column', gap: '16px'}}
+>
+
+  <!-- Asiakkaan nimi -->
+  <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
+    <label class="form-label" for="name">Asiakkaan nimi *</label>
+    <input 
+      id="name"
+      type="text" 
+      name="name" 
+      required
+      style={{padding: '10px', fontSize: '1rem'}}
+    />
+  </div>
+
+  <!-- Sähköposti -->
+  <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
+    <label class="form-label" for="email">Sähköpostiosoite</label>
+    <input 
+      id="email"
+      type="email" 
+      name="email" 
+      style={{padding: '10px', fontSize: '1rem'}}
+    />
+  </div>
+
+  <!-- Puhelinnumero -->
+  <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
+    <label class="form-label" for="phone">Puhelinnumero</label>
+    <input 
+      id="phone"
+      type="tel" 
+      name="phone" 
+      style={{padding: '10px', fontSize: '1rem'}}
+    />
+  </div>
+
+  <!-- Tuotekoodi -->
+  <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
+    <label class="form-label" for="serial">Tuotekoodi *</label>
+    <input 
+      id="serial"
+      type="text" 
+      name="serial" 
+      required
+      style={{padding: '10px', fontSize: '1rem'}}
+    />
+  </div>
+
+  <!-- Ostopäivä -->
+  <div style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
+    <label class="form-label" for="purchaseDate">Ostopäivä *</label>
+    <input 
+      id="purchaseDate"
+      type="date" 
+      name="purchaseDate" 
+      required
+      style={{padding: '10px', fontSize: '1rem'}}
+    />
+  </div>
+
+  <!-- Rekisteröintipäivä (hidden, automatic) -->
+  <input 
+    type="hidden" 
+    name="registrationDate" 
+    value={new Date().toISOString().split('T')[0]} 
+  />
+
+  <button 
+    type="submit" 
+    class="button-primary" 
+    style={{padding: '12px', fontSize: '1rem'}}
+  >
+    Lähetä
+  </button>
+</form>
       </Block>
+
+  <!-- Info blocks row -->
+<Block
+  tag="div"
+  className="info-grid"
+>
+  <!-- Miksi rekisteröidä tuotteita -->
+  <div class="info-section">
+    <h2 class="info-heading">Miksi rekisteröidä tuotteita?</h2>
+    <p class="info-text">
+      Rekisteröimällä ostoksesi saat tuotteen takuuksi pidennetyn
+      <strong> 5 vuoden takuun</strong>. Rekisteröinti helpottaa takuuasioiden
+      käsittelyä ja huollon palvelua, koska tarvittavat tiedot ovat valmiina.
+    </p>
+  </div>
+
+  <!-- Mitä tietoja tarvitaan -->
+  <div class="info-section">
+    <h2 class="info-heading">Mitä tietoja tarvitaan?</h2>
+    <p class="info-text">
+      Tarvitsemme nimen, yhteystiedot, tuotteen tuotekoodin (HR-) sekä
+      ostopäivämäärän. Jos et muista tarkkaa ostopäivää, voit antaa myös
+      arvioidun ajankohdan. Antamasi tiedot tallennetaan turvallisesti ja
+      niitä käytetään vain takuun käsittelyyn.
+    </p>
+  </div>
+</Block>
+
+
     </Container>
   </Section>
+ 
 </Layout>
 
 <style>
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+    background: black;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -55,13 +161,68 @@ import { Section, Container, Block, Link } from '../../devlink/_Builtin/Basic';
 
   .button-primary {
     border-radius: 4px;
-    background: #146ef5;
+    background: black;
     color: #ffffff;
-    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.25), inset 0px 29px 23px -16px rgba(255, 255, 255, 0.04), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.25),
+      inset 0px 29px 23px -16px rgba(255, 255, 255, 0.04),
+      inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: 0.2s ease;
   }
 
   .button-primary:hover {
-    background: #2c80fd;
+    background: #d04c44;
     color: #ffffff;
   }
+
+  .form-label {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000;
+}
+
+/* Grid wrapper */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 32px;
+}
+
+/* Individual box */
+.info-section {
+  padding: 20px;
+  border-radius: 6px;
+  background: #f9f9f9;
+  border: 1px solid #ececec;
+  text-align: center;
+}
+
+/* Headings */
+.info-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #1a1a1a;
+}
+
+/* Text */
+.info-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 </style>
