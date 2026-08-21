@@ -1,0 +1,185 @@
+---
+Astro.response.status = 404;
+Astro.response.statusText = 'Not Found';
+---
+
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Sivua ei löytynyt | Rosenlew</title>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <a href="/" aria-label="Rosenlew etusivu">
+          <img
+            class="logo"
+            src="/rosenlew-kruunu-m.svg"
+            alt="Rosenlew"
+          />
+        </a>
+      </header>
+
+      <main class="main">
+        <div class="content">
+          <p class="error-code">404 · Sivua ei löytynyt</p>
+
+          <h1>Sivua ei löytynyt</h1>
+
+          <p class="description">
+            Etsimääsi sivua ei tällä hetkellä ole saatavilla.
+          </p>
+
+          <p class="description">
+                      Palaa Rosenlew-kodinkoneiden etusivulle, ja tutustu
+            tuotteisiimme sekä palveluihimme.
+          </p>
+
+          <a class="home-link" href="https://www.rosenlew.fi/">
+            Palaa etusivulle
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  :global(html) {
+    background: #f7f7f5;
+  }
+
+  :global(body) {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #232323;
+    background: #f7f7f5;
+  }
+
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    width: 100%;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8e6;
+  }
+
+  .logo {
+    display: block;
+    width: 180px;
+    height: auto;
+  }
+
+  .main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+  }
+
+  .error-code {
+    margin: 0 0 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #777777;
+  }
+
+  h1 {
+    margin: 0 0 20px;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #232323;
+  }
+
+  .description {
+    max-width: 520px;
+    margin: 0 auto 36px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555555;
+  }
+
+  .home-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 28px;
+    border-radius: 4px;
+    background: #232323;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .home-link:hover {
+    background: #444444;
+    transform: translateY(-1px);
+  }
+
+  .arrow {
+    margin-left: 10px;
+    font-size: 1.1rem;
+  }
+
+
+  @media (max-width: 600px) {
+    .header {
+      padding: 24px 20px;
+    }
+
+    .logo {
+      width: 150px;
+    }
+
+    .main {
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.7rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .home-link {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+</style>
